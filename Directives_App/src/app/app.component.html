@@ -1,0 +1,57 @@
+<h3 class="text-center" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-style: italic;"><span class="glyphicon glyphicon-star"></span> Game of OddNumbers & EvenNumbers <span class="glyphicon glyphicon-star"></span></h3>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <label style="float: right; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-style: italic;">Motivational Quote : The harder you work for something, the greater you'll feel when you achieve it.</label>
+      <button
+        style="background-color: black; color: red; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-style: italic;"
+        class="btn btn-primary"
+        (click)="onlyOdd = !onlyOdd">Show Odd Numbers</button>
+        <hr>
+        <label style="float: right; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-style: italic;">Motivational Quote : Success is not final; Failure is not fatal: It is the courage to continue that counts.</label>
+        <button
+        style="background-color: black; color: blue; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-style: italic;"
+        class="btn btn-primary"
+        (click)="onlyEven = !onlyEven">Show Even Numbers</button>
+        <hr>
+        <ul class="list-group">
+          <li
+            class="list-group-item"
+            [ngClass]="{number: number}"
+            [ngStyle]="{backgroundColor: number ? 'peachpuff' : 'transparent'}"
+            *ngFor="let number of numbers">
+            {{ number }}
+          </li>
+          <br>
+          <div *ngIf="onlyOdd">
+            <label>Odd Numbers are:</label>
+            <li
+            class="list-group-item"
+            [ngClass]="{odd: odd % 2 !== 0}"
+            [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'black' : 'transparent'}"
+            *ngFor="let odd of oddNumbers">
+            {{ odd }}
+            </li>
+          </div>
+          <div *ngIf="onlyEven">
+            <label>Even Numbers are:</label>
+            <li
+            class="list-group-item"
+            [ngClass]="{even: even % 2 === 0}"
+            [ngStyle]="{backgroundColor: even % 2 === 0 ? 'black' : 'transparent'}"
+            *ngFor="let even of evenNumbers">
+            {{ even }}
+          </li>
+          </div>
+        </ul>
+        <hr>
+        <h3 class = "text-center" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-style: italic;"><span class="glyphicon glyphicon-heart"></span> Glimpse of an Indian Flag <span class="glyphicon glyphicon-heart"></span></h3>
+        <p style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-style: italic;">Please note : Colours will change when you hover upon them.</p>
+        <br>
+        <p appBasicHighlight style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-style: italic; text-align: left; color: black;">Saffron - Symbol of Courage & Sacrifice.</p>
+        <p appBetterHighlight style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-style: italic; text-align: center;">White - Symbol of Honesty, Peace & Purity.</p>
+        <p appBetterHighlight2 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-style: italic; text-align: right; color: white;">Green - Symbol of Faith & Chivalry.</p>
+    </div>
+  </div>
+</div>
