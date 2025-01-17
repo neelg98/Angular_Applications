@@ -1,0 +1,92 @@
+<h3 style="text-align: center; font-style: italic; font-weight: bold; font-family: Verdana, Geneva, Tahoma, sans-serif; color: maroon;"><span class="glyphicon glyphicon-chevron-left"></span><span class="glyphicon glyphicon-chevron-left"></span><span class="glyphicon glyphicon-chevron-left"></span>General Knowledge Application<span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon glyphicon-chevron-right"></span></h3>
+<p style="text-align: center; font-style: italic; color: maroon;">(Insert Valuable Information or Gain Valuable Information.)</p>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <form #postForm="ngForm" (ngSubmit)="onCreatePost(postForm.value)">
+        <div class="form-group">
+          <label for="title" style="font-style: italic; color: darkcyan">Title (Question)</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            required
+            ngModel
+            name="title"/>
+        </div>
+        <div class="form-group">
+          <label for="answer" style="font-style: italic; color: darkcyan;">Answer</label>
+          <input
+            type="text"
+            class="form-control"
+            id="answer"
+            required
+            ngModel
+            name="answer"/>
+        </div>
+        <div class="form-group">
+          <label for="content" style="font-style: italic; color: darkcyan;">Content (Information)</label>
+          <textarea
+            class="form-control"
+            id="content"
+            required
+            ngModel
+            name="content"></textarea>
+        </div>
+        <button
+          style="font-style: italic;"
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="!postForm.valid">Send Data</button>  
+        <button
+          style="margin: 5px; font-style: italic;"
+          class="btn btn-danger"
+          type="reset">Reset</button>  
+      </form>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-xs-12">
+      <button 
+        style="font-style: italic;"
+        class="btn btn-primary" 
+        (click)="onFetchPosts()">Fetch Data</button>
+      |
+      <button
+        style="font-style: italic;"
+        class="btn btn-danger"
+        [disabled]="loadedPosts.length < 1"
+        (click)="onClearPosts()">Clear Data</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-xs-12">
+      <p 
+      style="font-style: italic; color: darkcyan;"
+      *ngIf="loadedPosts.length < 1 && !isFetching">Insert some Informational Knowledge&hearts;</p>
+      <ul class="list-group" *ngIf="loadedPosts.length >=1 && !isFetching">
+        <li class="list-group-item" *ngFor="let post of loadedPosts">
+          <h4 style="font-style: italic; text-align: center; color: maroon;">{{ post.title }}</h4>
+          <p style="font-style: italic; color: darkcyan;">=> {{ post.answer }}</p>
+          <p style="font-style: italic; color: darkcyan;">{{ post.content }}</p>
+        </li>
+      </ul>
+      <p *ngIf="isFetching && !error">Loading...</p>
+      <div class="alert alert-danger" *ngIf="error">
+        <h2 style="text-align: center; font-style: italic;">Only Admin Can Access The Data!</h2>
+        <br>
+        <p style="font-style: italic; text-align: center;">{{ error }}</p>
+        <br>
+        <div class="text-center">
+        <button 
+        style="font-style: italic; text-align: center;"
+        class="btn btn-danger" 
+        (click)="onHandleError()">Alright</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
