@@ -1,0 +1,17 @@
+<h4 style="text-align: center; background-color: green; color: whitesmoke;">&hearts; Relationship Portal &hearts;</h4>
+<label>Have Girlfriend/Boyfriend? If yes, comment below &hellip;!</label>
+<input
+   type="text"
+   class="form-control"
+   (input)="onUpdateStatus($event)">
+<p>You confirm about your answer - {{ status }}</p>
+<button
+  style="background: green; color: whitesmoke;"
+  class="btn btn-primary"     
+  [disabled]="!allowStatus"
+  (click)="onStatus()">Submit</button>
+  <br><br>
+  <p *ngIf="statusChange">Arey Waah, SADA KHUSH RAHO!!</p>
+  <p *ngIf="!statusChange">We are assuming you to be single!</p>    
+
+

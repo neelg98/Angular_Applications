@@ -1,0 +1,19 @@
+<h4 style="text-align: center; background-color: green; color: whitesmoke;">&hearts; Friend's Portal &hearts;</h4>
+<p>There are friends,there is family,and then there are friends that become family.</p>
+<label>Name</label>
+<input
+   type="text"
+   class="form-control"
+   (input)="onUpdateFriendName($event)">        
+<p>Make sure you enter the correct name - {{ friendName }}</p>   
+<button 
+  style="background: green; color: whitesmoke;"
+  class="btn btn-primary"
+  [disabled]="!allowNewFriend"     
+  (click)="onCreateFriend()">Add Friend</button>  
+  <br><br>
+  <p *ngIf="friendCreated; else noFriend">{{ friendName }} is added, Welcome to the family!!</p>
+  <ng-template #noFriend>
+    <p>No Friend was added!</p>
+  </ng-template>
+ 
