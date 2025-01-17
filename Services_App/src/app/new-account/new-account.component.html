@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <div class="form-group">
+      <label>Account Holder's Name</label>
+      <input
+        type="text"
+        class="form-control"
+        #accountName>
+    </div>
+    <div class="form-group">
+      <label>Bank Name</label>
+      <input
+        type="text"
+        class="form-control"
+        #bankName>
+    </div>
+    <div class="form-group">
+      <label>Account No.</label>
+      <input
+        type="number"
+        class="form-control"
+        #accountNo>
+    </div>
+    <div class="form-group">
+      <label>Account Balance</label>
+      <input
+        type="number"
+        class="form-control"
+        #accountBalance>
+    </div>
+    <div class="form-group">
+      <label>Debit/Credit Card Details (Insert your Card Number)</label>
+      <input
+        type="number"
+        class="form-control"
+        #cardNumber>
+    </div>
+    <div class="form-group">
+      <label>Account Type</label>
+      <select class="form-control" #type>
+        <option value="savings">Savings</option>
+        <option value="current">Current</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Account Status</label>
+      <select class="form-control" #status>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Fixed Deposit Count</label>
+      <input
+        type="number"
+        class="form-control"
+        #fixedDeposit>
+    </div>
+    <div class="text-center">
+    <button
+      style="margin:4px;"
+      class="btn btn-primary"
+      (click)="onCreateAccount(accountName.value, bankName.value, accountNo.value, accountBalance.value, cardNumber.value, type.value, status.value, fixedDeposit.value)">
+      Add Account
+    </button>
+    </div>
+  </div>
+</div>

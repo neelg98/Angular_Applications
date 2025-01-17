@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="split left">
+    <div class="col-md-8">
+    <h5>Account Holder - {{ account.name }}</h5>
+    <h5>Bank Name - {{ account.b_name }}</h5>
+    <h5>Account No. - {{ account.account_no }}</h5>
+    <h5>Account Balance - {{ account.account_balance }}</h5>
+    <h5>Debit Card Number - {{ account.card_number }}</h5>
+    <h5>Number of FD's - {{ account.fixed_deposit }}</h5>
+    </div>
+  </div>  
+  <div class="split right">
+    <div class="col-md-4">
+    <p>Account Type - {{ account.type }}</p>
+    <button class="button button4" (click)="onSet('savings')">Set to 'Savings'</button>
+    <button class="button button4" (click)="onSet('current')">Set to 'Current'</button>
+    <br><br>
+    <p>Account Status - {{ account.status }}</p>
+    <button class="button button4" (click)="onSetTo('active')">Set to 'Active'</button>
+    <button class="button button4" (click)="onSetTo('inactive')">Set to 'Inactive'</button>
+    </div>
+  </div>  
+</div>  
+
