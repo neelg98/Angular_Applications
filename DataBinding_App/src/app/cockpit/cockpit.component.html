@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-12">
+    <p style="font-style: italic; color: firebrick;">Enter Details about your Server:-</p>
+    <p style="font-style: italic; color: firebrick;">Your entered Server/Blueprint will be listed below:</p>
+    <br>
+    <label style="font-style: italic; color: firebrick;">Server Name</label>
+    <input type="text" class="form-control" [(ngModel)]="newServerName">
+    <br>
+    <label style="font-style: italic; color: firebrick;">Server Description</label>
+    <input type="text" class="form-control" [(ngModel)]="newServerContent">
+    <br>
+    <button
+      style="margin: 5px; font-style: italic;"
+      class="btn btn-primary"
+      (click)="onAddServer()">Add Server</button>
+    <button
+      style="margin: 5px; font-style: italic;"
+      class="btn btn-primary"
+      (click)="onAddBlueprint()">Add Blueprint</button>  
+  </div>
+</div>
+ 

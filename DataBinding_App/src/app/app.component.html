@@ -1,0 +1,18 @@
+<h3 style="text-align: center; font-style: italic; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: firebrick"><span class="glyphicon glyphicon-flash"></span> Server Management Application <span class="glyphicon glyphicon-flash"></span></h3>
+<p style="text-align: center; font-style: italic; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: firebrick;">(A Place Where You Can Manage Your Active Servers)</p>
+<hr>
+<div class="container">
+  <app-cockpit (serverCreated)="onServerAdded($event)"
+               (bpCreated)="onBlueprintAdded($event)"></app-cockpit>
+  <hr>
+  <p style="font-style: italic; color: black;">My initial servers are listed below:-</p>
+  <br>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-server-element 
+        *ngFor="let serverElement of serverElements"
+        [srvElement]="serverElement"></app-server-element>
+    </div>
+  </div>
+</div>
+
