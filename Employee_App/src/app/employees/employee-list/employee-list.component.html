@@ -1,0 +1,22 @@
+<p>Here is the list of newly recruited employees!!</p>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <app-employee-item
+      *ngFor="let employeeEl of employees; let i = index"
+      [employee]="employeeEl"
+      [index]="i"></app-employee-item>
+  </div>
+</div>
+<br>
+<button class="btn btn-primary" style="margin: 5px;" (click)="onSaveData()">Save Data</button>
+<button class="btn btn-primary" style="margin: 5px;" (click)="onFetchData()">Fetch Data</button>
+<br><br>
+<p>Click below to add a new employee!</p>
+<br>
+<div class="text-center">
+  <button
+  class="btn btn-primary"
+  (click)="onAddEmployee()">Add Employee</button>
+</div>
+
