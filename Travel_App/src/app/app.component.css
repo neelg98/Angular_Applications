@@ -1,0 +1,37 @@
+/* Split the screen in half */
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+  
+  /* Control the left side */
+  .left {
+    left: 0;
+    background-color:white;
+  }
+  
+  /* Control the right side */
+  .right {
+    right: 0;
+    background-color:white;
+  }
+
+  /* Control Table Padding */
+  table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+
+  /* Control Cell Padding */
+  th, td {
+    padding: 5px;
+  }
+  
